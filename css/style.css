@@ -1,0 +1,16 @@
+:root {
+  --primary-color: #EF5E78;
+  --orange: #E85A17;
+  --dark-pink: #E817A5;
+}
+
+body {
+  font-family: 'Fira Sans', sans-serif;
+}
+
+/* title section */
+
+.title {
+  background-color: var(--dark-pink);
+
+}
