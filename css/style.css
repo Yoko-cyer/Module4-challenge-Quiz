@@ -8,9 +8,18 @@ body {
   font-family: 'Fira Sans', sans-serif;
 }
 
+.hide {
+  display: none;
+}
+
 /* title section */
 
 .title {
   background-color: var(--dark-pink);
 
+}
+
+.custom-btn {
+  background-color: var(--orange);
+  
 }

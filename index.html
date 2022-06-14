@@ -28,37 +28,65 @@
 
   <main>
    <!-- timer -->
-   <section>
+   <section id="section-timer" class="hide">
+     Time remaining is 
     <h3 id="timer">
-
+      60
     </h3>
    </section>
 
    <!-- start game btn -->
-   <section>
-     <button id="start-game">
-       Start
-     </button>
-    </section>
+   <section id="section-landing">
+    <button type="button" id="start-button" class="rounded custom-btn text-light ">Start</button>
+   </section>
 
    <!-- question section -->
-   <section id="question-section">
+   <section id="question-section" class="hide">
 
     <!-- title -->
     <h2 id="question-title">
       How many menbers are there in BTS?
     </h2>
     <!-- choices -->
+    <ul id="question-choices">
+      <li>
+        <button type="button" class="btn btn-primary btn-lg btn-block">3</button>
+      </li>
+      <li>
+        <button type="button" class="btn btn-primary btn-lg btn-block">7</button>
+      </li>
+      <li>
+        <button type="button" class="btn btn-primary btn-lg btn-block">9</button>
+      </li>
+      
+    </ul>
 
-    
    </section>
   
   <!-- end game screen (show high score) -->
-  <!-- form to enter initials -->
-  <!-- btn to save the initials -->
+  <section id="section-end-game" class="hide">
+    <h2>Game Over!!</h2>
+    <h3>Your Score is: <span id="result-span">40</span></h3>
+    <!-- form to enter initials -->
+    <!-- btn to save the initials -->
+    <form id="form-initials">
+      <input type="text" placeholder="initials here" id="input-initials">
+      <button type="submit">Save</button>
+    </form>
+  </section>
 
   <!-- all the high scores page -->
+  <section id="section-highscore" class="hide">
+    <h2>High scores</h2>
 
+    <ul>
+      <li class="highscore-items"></li>
+      <li class="highscore-items"></li>
+      <li class="highscore-items"></li>
+    </ul>
+  </section>
+
+  <button id="button-home">Back to home</button>
 
 </main>
   
