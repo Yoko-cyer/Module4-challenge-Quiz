@@ -1,10 +1,10 @@
-// let response = confirm("Do you want to play Kpop Idole Quize?");
+let response = confirm("Do you want to play Kpop Idole Quize?");
 
-// if(response) {
-//   alert("Let's Play!!");
-// } else {
-//   alert("See you later.");
-// }
+if(response) {
+  alert("Let's Play!!");
+} else {
+  alert("See you later.");
+}
 
 // variables tpo target dom elements
 const startBtn = document.getElementById("start-button");
@@ -13,7 +13,7 @@ const secQuestion = document.getElementById("question-section");
 const timerEl = document.getElementById("timer") 
 const secEndGame = document.getElementById("section-end-game");
 const questionTitleEl = document.getElementById("question-title");
-const questionChoises = document.getElementById("question-choices");
+const questionChoices = document.getElementById("question-choices");
 
 
 let timeRemaining = 5;
@@ -32,8 +32,9 @@ function renderQuestion(questionIndex){
 
   // set the choices
   const choices = question.choices;
+  // questionChoices.textContent = "";
 
-  for (let index = 0; index < array.length; index++) {
+  for (let index = 0; index < choices.length; index++) {
     const choice = choices[index];
 
     const li = document.createElement("li");
@@ -42,12 +43,38 @@ function renderQuestion(questionIndex){
     button.setAttribute("class", "question-choice");
     button.textContent = choice.title;
 
+    button.addEventListener("click", function(event){
+
+      if(choice.isAnswer){
+        // give feedack correct
+
+      } else {
+        // give feedback wrong
+        // deduct 10 sec from the timer 
+        timeRemaining = timeRemaining - 10; 
+      };
+
+      
+      //  when user click on the choice of the final question
+      const nextQuestionIndex = questionIndex + 1;
+      
+      if(nextQuestionIndex >= questions.length){
+        // end game
+        return endGame();
+      };
+      
+      // move on to te next question
+      renderQuestion(questionIndex);
+      
+    });
+
     li.appendCild(button);
 
-    questionChoises.append(li);
+    questionChoices.append(li);
   }
 
 }
+
 
 // when start btn is clicked
 startBtn.addEventListener('click', function(event){
@@ -58,6 +85,7 @@ startBtn.addEventListener('click', function(event){
   secQuestion.classList.remove("hide");
   // hide landing
   // secQuestion.classList.add("hide");
+  renderQuestion(0)
 });
 
 function endGame() {
@@ -95,23 +123,7 @@ function startTimer() {
   }, 1000)
 };
 
-// question section 
 
-// user clicks on choice
-
-// if user answer correct, "Correct" appers and get 10 points
-// move on to the next question
-
-// if user answer incorrect, "Wrong" appers and get nothing
-// move on to the next question
-
-// when all the questions are answered, user input initials and hit save btn
-
-// after save button clickes, screen shows top 3 initials and scores 
-
-// when "home" button is clicked, go back to the initial screen 
-
-// if user click on the choice of the final question
 
 // end game
 
