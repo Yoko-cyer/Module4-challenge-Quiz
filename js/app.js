@@ -6,16 +6,48 @@
 //   alert("See you later.");
 // }
 
-// when user clicks start btn, 
-// show timer and question and hide start btn 
+// variables tpo target dom elements
 const startBtn = document.getElementById("start-button");
 const secTimer = document.getElementById("section-timer");
 const secQuestion = document.getElementById("question-section");
 const timerEl = document.getElementById("timer") 
 const secEndGame = document.getElementById("section-end-game");
+const questionTitleEl = document.getElementById("question-title");
+const questionChoises = document.getElementById("question-choices");
+
 
 let timeRemaining = 5;
 let timerId;
+
+
+// render question function
+
+function renderQuestion(questionIndex){
+  // get question
+  const question = questions[questionIndex];
+
+  //  create the structure
+  // set the question title
+  questionTitleEl.textContent = question.title;
+
+  // set the choices
+  const choices = question.choices;
+
+  for (let index = 0; index < array.length; index++) {
+    const choice = choices[index];
+
+    const li = document.createElement("li");
+    const button = document.createElement("button");
+
+    button.setAttribute("class", "question-choice");
+    button.textContent = choice.title;
+
+    li.appendCild(button);
+
+    questionChoises.append(li);
+  }
+
+}
 
 // when start btn is clicked
 startBtn.addEventListener('click', function(event){
@@ -25,6 +57,7 @@ startBtn.addEventListener('click', function(event){
   // show question
   secQuestion.classList.remove("hide");
   // hide landing
+  // secQuestion.classList.add("hide");
 });
 
 function endGame() {
@@ -56,12 +89,9 @@ function startTimer() {
 
   // if timer expires while the game is not completed yet
   if(timeRemaining <= 0){
-
       // end game
       endGame();
-  
   } 
-
   }, 1000)
 };
 
