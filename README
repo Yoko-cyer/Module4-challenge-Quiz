@@ -1,0 +1,26 @@
+# Module 4 Challenge - Quiz App
+
+## Purpose of this website
+
+This fun quiz app tests your knowledge about BTS and you can learn about BTS. It also showcases my understanding of fundamental JavaScript.
+
+---
+
+## User story
+As A fan of BTS
+I want to test my knowledge about them  
+So THAT I can learn about them in a fun way. 
+
+---
+
+## Screenshot
+
+![alt text](./img/screenshot.png)
+
+---
+
+## Links
+
+[Github page](https://github.com/Yoko-cyer/Module4-challenge-Quiz)
+
+[Deployed website](https://bts-fun-quize.netlify.app/)

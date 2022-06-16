@@ -16,7 +16,7 @@ const questionTitleEl = document.getElementById("question-title");
 const questionChoices = document.getElementById("question-choices");
 
 
-let timeRemaining = 5;
+let timeRemaining = 60;
 let timerId;
 
 
